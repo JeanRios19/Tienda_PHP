@@ -27,7 +27,7 @@ class StoreProductoRequest extends FormRequest
         return [
             "nombre" => 'required|alpha|unique:productos,nombre',
             "desc" => 'required|max:100',
-            "precio" => 'required|numeric|max:10000',
+            "precio" => 'required|numeric|max:100000000',
             "imagen" => 'required|image',
             "categoria" => 'required',
             "marca" => 'required'

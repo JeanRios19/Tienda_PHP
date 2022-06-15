@@ -4,6 +4,11 @@
 <div class="row">
     <h1 class="light-blue-text text-darken-4">Carrito de compras</h1>
 </div>
+@if(!session('cart'))
+<div class="row">
+   <p>no hay items en el carrito</p>
+</div>
+@else
 <div class="row">
     <div class="col s12">
         <table>
@@ -11,12 +16,15 @@
                 <tr>
                     <th>Producto</th>
                     <th>Cantidad</th>
+                    <th>Precio</th>
                 </tr>
             </thead>
             <tbody>
                    @foreach(session('cart') as $index => $prod)
                     <tr>
-                        <td>{{ var_dump($prod) }}</td>
+                        <td>{{ $prod[0]['nombre_prod'] }}</td>
+                        <td>{{ $prod[0]['cantidad'] }}</td>
+                        <td>{{ $prod[0]['precio'] }}</td>
                     </tr>
                    @endforeach
                 </tbody>
@@ -30,4 +38,5 @@
     <button class="btn waves-effect waves-light light-blue darken-4" type="submit">Eliminar Carrito</button>
     </form>
 </div>
+@endif
 @endsection

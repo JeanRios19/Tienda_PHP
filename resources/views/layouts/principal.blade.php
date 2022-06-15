@@ -13,8 +13,8 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">La Tienda PHP</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="{{ route('productos.store') }}">Productos</a></li>
-        <li><a href="collapsible.html">Pedidos</a></li>
+        <li><a href="{{ url('productos') }}">Productos</a></li>
+        <li><a href="{{url ('cart') }}">Cart</a></li>
       </ul>
     </div>
   </nav>
